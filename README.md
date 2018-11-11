@@ -1,1 +1,1 @@
-# PythonHW_DNA_RNA
+### Python BI course HW: DNA & RNA classes
