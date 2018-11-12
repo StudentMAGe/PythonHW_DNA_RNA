@@ -52,7 +52,7 @@ class Dna(str):
         if definedbps == 0:
             return None
         else:
-            return (gcs/definedbps)
+            return (round(gcs/definedbps, 2))
 
 #reverse_complement() function returns Dna object of complementary strand in 5' - 3' orientation
     def reverse_complement(self):
@@ -107,7 +107,7 @@ class Rna(str):
         if definedbps == 0:
             return None
         else:
-            return (gcs/definedbps)
+            return (round(gcs/definedbps, 2))
 
 #reverse_complement() function returns Rna object of complementary sequence in 5' - 3' orientation
     def reverse_complement(self):
