@@ -30,7 +30,7 @@ class Dna(str):
         return (self.sequence)
             
 # transcribe function returns transcription 
-# in coordinates [transcrstart : transcrend] 
+# in coordinates [transcr_start : transcr_end] 
 # as an Rna class object
 # whole sequence is transcribed by default
     def transcribe(self, transcr_start = 1, transcr_end = None): 
