@@ -33,12 +33,12 @@ class Dna(str):
     def transcribe(self, transcr_start = 1, transcr_end = None): 
         if transcr_end == None:
             transcr_end = len(self)
-        Rnatext = self.sequence[(transcrstart-1):transcrend].replace('T', 'U').replace('t', 'u')
+        Rnatext = self.sequence[(transcr_start-1):transcr_end].replace('T', 'U').replace('t', 'u')
         return Rna(Rnatext)
 
 #gc() function returns None if sequence length is 0 or all characters are ambiguous
     def gc(self):
-        DNAgcdict = {'A' : 0, 'C' : 1, 'G' : 1, 'T' : 0, 'S' : 1, 'W' : 0}
+        DNAgcdict = {'A': 0, 'C': 1, 'G': 1, 'T': 0, 'S': 1, 'W': 0}
         notforgc = ['R', 'Y', 'K', 'M', 'B', 'D', 'H', 'V', 'N']
         gcs = 0
         definedbps = len(self.sequence)
@@ -56,8 +56,8 @@ class Dna(str):
 
 #reverse_complement() function returns Dna object of complementary strand in 5' - 3' orientation
     def reverse_complement(self):
-        DNArcdict = {'A' : 'T', 'C' : 'G', 'G' : 'C', 'T' : 'A', 'S' : 'W', 'W' : 'S', 'R' : 'Y', 'Y' : 'R', 
-                     'K' : 'M', 'M' : 'K', 'B' : 'V', 'D' : 'H', 'H' : 'D', 'V' : 'B', 'N' : 'N'}
+        DNArcdict = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A', 'S': 'W', 'W': 'S', 'R': 'Y', 'Y': 'R', 
+                     'K': 'M', 'M': 'K', 'B': 'V', 'D': 'H', 'H': 'D', 'V': 'B', 'N': 'N'}
         rcseq = ''
         for char in self.sequence:
             if char.isupper():
@@ -93,7 +93,7 @@ class Rna(str):
     
 #gc() function returns None if sequence length is 0 or all characters are ambiguous
     def gc(self):
-        RNAgcdict = {'A' : 0, 'C' : 1, 'G' : 1, 'U' : 0, 'S' : 1, 'W' : 0}
+        RNAgcdict = {'A': 0, 'C': 1, 'G': 1, 'U': 0, 'S': 1, 'W': 0}
         notforgc = ['R', 'Y', 'K', 'M', 'B', 'D', 'H', 'V', 'N']
         gcs = 0
         definedbps = len(self.sequence)
@@ -111,8 +111,8 @@ class Rna(str):
 
 #reverse_complement() function returns Rna object of complementary sequence in 5' - 3' orientation
     def reverse_complement(self):
-        RNArcdict = {'A' : 'U', 'C' : 'G', 'G' : 'C', 'U' : 'A', 'S' : 'W', 'W' : 'S', 'R' : 'Y', 'Y' : 'R', 
-                     'K' : 'M', 'M' : 'K', 'B' : 'V', 'D' : 'H', 'H' : 'D', 'V' : 'B', 'N' : 'N'}
+        RNArcdict = {'A': 'U', 'C': 'G', 'G': 'C', 'U': 'A', 'S': 'W', 'W': 'S', 'R': 'Y', 'Y': 'R', 
+                     'K': 'M', 'M': 'K', 'B': 'V', 'D': 'H', 'H': 'D', 'V': 'B', 'N': 'N'}
         rcseq = ''
         for char in self.sequence:
             if char.isupper():
@@ -120,4 +120,3 @@ class Rna(str):
             else:
                 rcseq = RNArcdict[char.upper()].lower() + rcseq
         return Rna(rcseq)
-
